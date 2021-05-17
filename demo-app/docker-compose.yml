@@ -1,13 +1,13 @@
 version: "3"
 services:
-  demo-app:
+  project_name:
     image: sparkpos/docker-nginx-php:7.4-alpine
-    container_name: demo-app
-    hostname: demo-app.docker
+    container_name: project_name
+    hostname: project_name.docker.localhost
     volumes:
-      - ~/www/demo-app:/var/www/html
+      - project_path:/var/www/html
     environment:
-      - VIRTUAL_HOST=demo-app.docker
+      - VIRTUAL_HOST=project_name.docker.localhost
       - DRUPAL8_WEB_DIR=docroot
       - MAX_FILE_UPLOAD_SIZE=300 
       - TIMEOUT=300

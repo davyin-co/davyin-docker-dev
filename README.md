@@ -13,3 +13,13 @@
 ```
 docker-compose -f proxy/docker-compose.yml -f mariadb/docker-compose.yml -f pma/docker-compose.yml up -d
 ```
+
+# 第一次运行代理
+```sh
+sh proxy.sh
+```
+
+# 创建新项目
+```sh
+sh quick-start.sh
+```
