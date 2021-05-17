@@ -1,0 +1,24 @@
+version: "3"
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    environment:
+      VIRTUAL_HOST: pma.docker
+      PMA_ARBITRARY: 1
+      UPLOAD_LIMIT: 32M
+      MAX_EXECUTION_TIME: 125
+      HIDE_PHP_VERSION: 1
+    #volumes:
+      #- ./config/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+    healthcheck:
+      test: ["CMD", "curl", "-Ss", "http://localhost/robots.txt"]
+      start_period: 5s
+      interval: 3s
+      timeout: 60s
+      retries: 10
+
+networks:
+  default:
+    external:
+      name: proxy

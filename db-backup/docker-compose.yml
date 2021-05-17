@@ -1,0 +1,29 @@
+version: "3"
+services:
+  db-backup:
+    container_name: db-backup
+    image: tiredofit/mariadb-backup
+    volumes:
+      - ./backup:/backup
+    restart: always
+    environment:
+      - TIMEZONE=Asia/Shanghai
+      - DB_DUMP_TARGET=/backup
+      - DB_SERVER=mariadb
+      - DB_NAME=terry
+      - DB_USER=root
+      - DB_PASSWORD=password
+      - DB_DUMP_FREQ=1440
+      - DB_DUMP_BEGIN=0022
+      - DB_CLEANUP_TIME=8640
+      - MD5=FALSE
+      - COMPRESSION=GZ
+      - SPLIT_DB=TRUE
+      - ENABLE_SMTP=FALSE
+      - ENABLE_ZABBIX=FALSE
+      - ENABLE_LOGROTATE=FALSE
+
+networks:
+  default:
+    external:
+      name: proxy

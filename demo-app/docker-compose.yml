@@ -1,0 +1,17 @@
+version: "3"
+services:
+  demo-app:
+    image: sparkpos/docker-nginx-php:7.4-alpine
+    container_name: demo-app
+    hostname: demo-app.docker
+    volumes:
+      - ~/www/demo-app:/var/www/html
+    environment:
+      - VIRTUAL_HOST=demo-app.docker
+      - DRUPAL8_WEB_DIR=docroot
+      - MAX_FILE_UPLOAD_SIZE=300 
+      - TIMEOUT=300
+networks:
+  default:
+    external:
+      name: proxy
