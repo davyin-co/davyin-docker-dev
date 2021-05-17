@@ -1,0 +1,18 @@
+version: '3'
+services:
+  redis:
+    image: 'bitnami/redis:6.2'
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis-data:/bitnami/redis/data
+    environment:
+      REDIS_PASSWORD: ******
+      DISABLE_COMMANDS: 'FLUSHDB,FLUSHALL,CONFIG'
+    command: /run.sh --maxmemory 8GB --maxmemory-policy allkeys-lru --appendonly no
+
+networks:
+  default:
+    external:
+      name: proxy

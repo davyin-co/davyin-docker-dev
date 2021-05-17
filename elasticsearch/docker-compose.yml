@@ -1,0 +1,26 @@
+version: "3"
+services:
+  es01:
+    image: davyinsa/elasticsearch-ik:7.12.1
+    container_name: es01
+    environment:
+      - discovery.type=single-node
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=true
+      - ELASTIC_PASSWORD=0iPgXuxrA&W9
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    networks:
+      - backend
+    restart: always
+    volumes:
+      - ./elasticsearch-data:/usr/share/elasticsearch/data
+networks:
+  default:
+    external:
+      name: proxy
