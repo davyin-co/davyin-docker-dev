@@ -10,7 +10,7 @@
 |db-backup|db-backup/docker-compose.yml|基于tiredofit/mariadb-backup镜像的自动化数据库备份
 
 # 整体架构（docker)
-[](./nginx-proxy.jpg)
+![](https://github.com/davyin-co/davyin-docker-dev/raw/master/nginx-proxy.jpg)
 # 步骤
 1. 创建docker网络
 ```
