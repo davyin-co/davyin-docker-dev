@@ -1,13 +1,28 @@
 # 介绍
 戴文公司开发环境
 
+# 设计原则
+1. 可扩展
+    可支持扩展为任意的web类应用容器部署。
+
+2. 统一入口
+    基于nginx-proxy/nginx-proxy的镜像，自动生成配置。也可替换为trafik。
+    使用nginx-proxy的好处是，nginx广泛流行，配置成熟，方便扩展。trafik配置需要学习一套新的规则。
+
+3. 可复用
+    该方案即可做为本地开发环境，也可以作为线上部署使用。
+
+4. 安全性
+    选用的容器镜像经过响应的安全改进。
+
 # 组件功能及介绍
 |组件|文件|说明|
 |---|---|---|
 |proxy|proxy/docker-compose.yml|基于nginx-proxy/nginx-proxy的镜像，可以自动基于容器的环境变量生成配置|
 |mariadb|mariadb/docker-compose.yml|基于mariadb:10.5镜像的数据库|
-|pma|pma/docker-compose.yml|运行phpmyadmin镜像，方便数据库管理。连接数据库的主机名为mariadb|
-|db-backup|db-backup/docker-compose.yml|基于tiredofit/mariadb-backup镜像的自动化数据库备份
+|pma|pma/docker-compose.yml|运行phpmyadmin/phpmyadmin镜像，方便数据库管理。连接数据库的主机名为mariadb|
+|db-backup|db-backup/docker-compose.yml|基于tiredofit/mariadb-backup镜像的自动化数据库备份。|
+|demo-app|demo-app/docker-compose.yml|用作实例，作为drupal部署。可以使用其他的web类镜像。|
 
 # 整体架构（docker)
 ![](https://github.com/davyin-co/davyin-docker-dev/raw/master/nginx-proxy.jpg)
