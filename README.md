@@ -20,6 +20,8 @@
 |---|---|---|
 |proxy|proxy/docker-compose.yml|基于nginx-proxy/nginx-proxy的镜像，可以自动基于容器的环境变量生成配置|
 |mariadb|mariadb/docker-compose.yml|基于mariadb:10.5镜像的数据库|
+|redis|redis/docker-compose.yml|基于bitname/redis:6.2镜像的redis数据库|
+|elasticsearch|elasticsearch/docker-compose.yml|基于davyinsa/elasticsearch:7.12.1镜像的数据库,含有IK分词插件|
 |pma|pma/docker-compose.yml|运行phpmyadmin/phpmyadmin镜像，方便数据库管理。连接数据库的主机名为mariadb|
 |db-backup|db-backup/docker-compose.yml|基于tiredofit/mariadb-backup镜像的自动化数据库备份。|
 |demo-app|demo-app/docker-compose.yml|用作实例，作为drupal部署。可以使用其他的web类镜像。|
