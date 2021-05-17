@@ -3,6 +3,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: pma
+    # restart: always
     environment:
       VIRTUAL_HOST: pma.docker
       PMA_ARBITRARY: 1
@@ -10,7 +11,7 @@ services:
       MAX_EXECUTION_TIME: 125
       HIDE_PHP_VERSION: 1
     #volumes:
-      #- ./config/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+    #- ./config/config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
     healthcheck:
       test: ["CMD", "curl", "-Ss", "http://localhost/robots.txt"]
       start_period: 5s

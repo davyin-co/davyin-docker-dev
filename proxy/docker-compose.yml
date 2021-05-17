@@ -1,12 +1,10 @@
 version: "3"
 services:
   nginx-proxy:
-    image: "jwilder/nginx-proxy"
+    image: "davyinsa/nginx-proxy"
     container_name: proxy
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ~/docker/local-devops/nginx/custom.conf:/etc/nginx/conf.d/custom_proxy_settings.conf
-      - ~/docker/local-devops/nginx/vhost.d:/etc/nginx/vhost.d
     restart: always
     ports:
       - "80:80"
