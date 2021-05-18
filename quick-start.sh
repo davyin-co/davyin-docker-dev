@@ -20,7 +20,7 @@ fi
 
 cp -f demo-app/docker-compose.yml $PROJECT_PATH
 
-# replace SUBTHEME to new theme string
+# replace project name and project path
 sed -i "s/project_name/$PROJECT_NAME/g" $PROJECT_PATH/docker-compose.yml
 sed -i "s#project_path#$PROJECT_PATH#g" $PROJECT_PATH/docker-compose.yml
 
