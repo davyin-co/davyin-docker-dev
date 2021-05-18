@@ -3,7 +3,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: pma
-    # restart: always
+    restart: always
     environment:
       VIRTUAL_HOST: pma.docker
       PMA_ARBITRARY: 1
