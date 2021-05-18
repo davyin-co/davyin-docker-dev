@@ -1,17 +1,18 @@
 version: "3"
 services:
   mariadb:
-    image: mariadb:10.5
+    image: wodby/mariadb:10.5
     container_name: mariadb
     volumes:
       - ./mariadb-data:/var/lib/mysql:cached
-      - ./my.cnf:/etc/my.cnf
     restart: always
-    command: --max_allowed_packet=4294967296
     environment:
       TZ: 'Asia/Shanghai'
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_ROOT_HOST: "%"
+      MYSQL_INNODB_BUFFER_POOL_SIZE: 1G
+      MYSQL_MAX_ALLOWED_PACKET: 512M
+      MYSQL_INNODB_FILE_FORMAT: barracuda
 networks:
   default:
     external:
