@@ -41,14 +41,23 @@ docker network create \
 ```
 
 2. 启动容器公用容器（docker启动时候自动启动）
-```
+```shell
+## 执行脚本
+sh proxy.sh
+
+## 也可以手动执行相关的命令
 docker-compose -f proxy/docker-compose.yml -f mariadb/docker-compose.yml -f pma/docker-compose.yml up -d
 ```
 
 3. 项目配置（drupal)
-```
+```shell
+## 执行shell脚本
+sh quick-start.sh
+
+## 也可以手动copy，然后修改相关配置
 cp -r demo-app demo-project
 cd demo-project
+
 ## 编辑配置，主要VIRTUAL_HOST环境变量，用来设置访问的域名
 ```
 
@@ -57,3 +66,8 @@ cd demo-project
 如果没有配置，修改本机的hosts，将VIRTUAL_HOST中的域名指向本地IP（一般为127.0.0.1)
 
 5. 浏览器访问
+```shell
+## 一般是如下格式的IP
+xx.docker.localhost   
+## e.g.  dist-base.docker.localhost
+```
