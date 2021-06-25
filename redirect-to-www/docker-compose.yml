@@ -1,0 +1,14 @@
+version: "3"
+services:
+  redirect-to-www:
+    image: schmunk42/nginx-redirect
+    container_name: redirect-to-www
+    environment:
+      - VIRTUAL_HOST=davyin.com
+      - HTTPS_METHOD=nohttps
+      - SERVER_REDIRECT=www.davyin.com
+      - SERVER_REDIRECT_SCHEME=https
+networks:
+  default:
+    external:
+      name: proxy
