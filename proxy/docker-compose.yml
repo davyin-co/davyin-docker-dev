@@ -11,6 +11,11 @@ services:
     environment:
       - HTTPS_METHOD=nohttps
       - HSTS=off
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500m"
+        max-file: "10"
 networks:
   default:
     external:
