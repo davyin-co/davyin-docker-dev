@@ -2,14 +2,16 @@ version: "3"
 services:
   db-backup:
     container_name: db-backup
-    image: tiredofit/mariadb-backup
+    image: tiredofit/db-backup
     volumes:
       - ./backup:/backup
     restart: always
     environment:
       - TIMEZONE=Asia/Shanghai
+      - BACKUP_LOCATION=FILESYSTEM
+      - DB_TYPE=mysql
       - DB_DUMP_TARGET=/backup
-      - DB_SERVER=mariadb
+      - DB_HOST=mariadb
       - DB_NAME=terry
       - DB_USER=root
       - DB_PASSWORD=password
