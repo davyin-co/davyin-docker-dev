@@ -14,7 +14,7 @@ services:
       - DB_HOST=mariadb
       - DB_NAME=terry
       - DB_USER=root
-      - DB_PASSWORD=password
+      - DB_PASS=password
       - DB_DUMP_FREQ=1440
       - DB_DUMP_BEGIN=0022
       - DB_CLEANUP_TIME=8640
