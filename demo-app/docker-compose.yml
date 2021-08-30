@@ -8,7 +8,7 @@ services:
       - project_path:/var/www/html
     environment:
       - VIRTUAL_HOST=project_name.docker.localhost
-      - DRUPAL8_WEB_DIR=docroot
+      - DRUPAL_WEB_ROOT=docroot
       - MAX_FILE_UPLOAD_SIZE=300 
       - TIMEOUT=300
 networks:
