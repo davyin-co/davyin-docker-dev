@@ -5,7 +5,7 @@ services:
     container_name: project_name
     hostname: project_name.docker.localhost
     volumes:
-      - project_path:/var/www/html
+      - ./:/var/www/html
     environment:
       - VIRTUAL_HOST=project_name.docker.localhost
       - DRUPAL_WEB_ROOT=docroot

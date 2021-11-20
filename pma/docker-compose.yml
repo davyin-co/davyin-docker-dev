@@ -5,7 +5,7 @@ services:
     container_name: pma
     restart: always
     environment:
-      VIRTUAL_HOST: pma.docker
+      VIRTUAL_HOST: pma.docker.localhost
       PMA_ARBITRARY: 1
       UPLOAD_LIMIT: 32M
       MAX_EXECUTION_TIME: 125

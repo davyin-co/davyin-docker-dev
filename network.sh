@@ -1,0 +1,1 @@
+docker network create  --driver=bridge --subnet=10.10.255.0/24 --ip-range=10.10.255.0/24 --gateway=10.10.255.254 proxy
