@@ -30,14 +30,12 @@
 ![](https://github.com/davyin-co/davyin-docker-dev/raw/master/nginx-proxy.jpg)
 # 步骤
 1. 创建docker网络
-```
-docker network create \
-                --driver=bridge \
-                --subnet=10.10.255.0/24 \
-                --ip-range=10.10.255.0/24 \
-                --gateway=10.10.255.254 \
-                proxy
+``` shell
+## 执行脚本
+sh network.sh
 
+## 也可以手动执行相关的命令
+docker network create --driver=bridge --subnet=10.10.255.0/24 --ip-range=10.10.255.0/24 --gateway=10.10.255.254 proxy
 ```
 
 2. 启动容器公用容器（docker启动时候自动启动）
@@ -55,7 +53,7 @@ docker-compose -f proxy/docker-compose.yml -f mariadb/docker-compose.yml -f pma/
 sh quick-start.sh
 
 ## 也可以手动copy，然后修改相关配置
-cp -r demo-app demo-project
+cp -r demo-app/docker-compose.yml demo-project/
 cd demo-project
 
 ## 编辑配置，主要VIRTUAL_HOST环境变量，用来设置访问的域名
@@ -69,5 +67,5 @@ cd demo-project
 ```shell
 ## 一般是如下格式的IP
 xx.docker.localhost   
-## e.g.  dist-base.docker.localhost
+## e.g.  dyniva.docker.localhost
 ```
