@@ -9,7 +9,7 @@ services:
     environment:
       - VIRTUAL_HOST=project_name.docker.localhost
       - DRUPAL_WEB_ROOT=docroot
-      - MAX_FILE_UPLOAD_SIZE=300 
+      - MAX_FILE_UPLOAD_SIZE=300M
       - TIMEOUT=300
 networks:
   default:
