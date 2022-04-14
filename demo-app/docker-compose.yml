@@ -4,6 +4,12 @@ services:
     image: sparkpos/docker-nginx-php:7.4-alpine
     container_name: project_name
     hostname: project_name.docker.localhost
+    healthcheck:
+      test: curl -fs http://localhost/ || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     volumes:
       - ./:/var/www/html
     environment:
