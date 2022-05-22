@@ -19,5 +19,4 @@ services:
       MYSQL_TRANSACTION_ISOLATION: READ-COMMITTED
 networks:
   default:
-    external:
-      name: proxy
+    name: proxy

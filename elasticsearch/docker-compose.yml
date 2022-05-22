@@ -20,5 +20,4 @@ services:
       - ./elasticsearch-data:/usr/share/elasticsearch/data
 networks:
   default:
-    external:
-      name: proxy
+    name: proxy

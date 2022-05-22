@@ -10,5 +10,4 @@ services:
       - SERVER_REDIRECT_SCHEME=https
 networks:
   default:
-    external:
-      name: proxy
+    name: proxy

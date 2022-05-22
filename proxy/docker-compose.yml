@@ -19,5 +19,4 @@ services:
         max-file: "10"
 networks:
   default:
-    external:
-      name: proxy
+    name: proxy
