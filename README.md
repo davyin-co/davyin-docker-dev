@@ -18,12 +18,13 @@
 # 组件功能及介绍
 |组件|文件|说明|FQDN|
 |---|---|---|--|
-|proxy|proxy/docker-compose.yml|基于nginx-proxy/nginx-proxy的镜像，可以自动基于容器的环境变量生成配置|proxy|
-|mariadb|mariadb/docker-compose.yml|基于mariadb:10.5镜像的数据库|mariadb|
-|redis|redis/docker-compose.yml|基于bitname/redis:6.2镜像的redis数据库|redis|
-|elasticsearch|elasticsearch/docker-compose.yml|基于davyinsa/elasticsearch镜像的数据库,含有IK分词插件|es01|
-|pma|pma/docker-compose.yml|运行phpmyadmin/phpmyadmin镜像，方便数据库管理。连接数据库的主机名为mariadb|N/A|
-|db-backup|db-backup/docker-compose.yml|基于tiredofit/mariadb-backup镜像的自动化数据库备份。|N/A|
+|proxy|proxy/docker-compose.yml|基于[nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy)的镜像，可以自动基于容器的环境变量生成配置|proxy|
+|proxy-https|proxy-https/docker-compose.yml|基于[nginx-proxy](https://hub.docker.com/r/jwilder/nginx-proxy)的镜像，可以自动基于容器的环境变量生成配置，支持ssl证书|proxy|
+|mariadb|mariadb/docker-compose.yml|基于[mariadb:10.5](https://hub.docker.com/r/wodby/mariadb)镜像的数据库|mariadb|
+|redis|redis/docker-compose.yml|基于[bitnam/redis:6.2](https://hub.docker.com/r/wodby/redis)镜像的redis>数据库|redis|
+|elasticsearch|elasticsearch/docker-compose.yml|基于[davyinsa/elasticsearch](https://hub.docker.com/r/davyinsa/elasticsearch-ik)镜像的数据库,含有IK分词插件|es01|
+|pma|pma/docker-compose.yml|运行[phpmyadmin/phpmyadmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin)镜像，方便数据库管理。连接数据库的主机名为mariadb|N/A|
+|db-backup|db-backup/docker-compose.yml|基于[tiredofit/mariadb-backup](https://hub.docker.com/r/tiredofit/db-backup)镜像的自动化数据库备份。|N/A|
 |demo-app|demo-app/docker-compose.yml|用作实例，作为drupal部署。可以使用其他的web类镜像。|demo-app.docker|
 
 # 整体架构（docker)
@@ -69,3 +70,22 @@ cd demo-project
 xx.docker.localhost   
 ## e.g.  dyniva.docker.localhost
 ```
+
+## proxy容器的HTTPS支持
+进入proxy-https/certs目录下，将SSL证书放到这里，ssl证书必须以.key和.crt结尾。
+例如域名是example.com,则证书名如下：
+```
+example.com.key
+example.com.crt
+```
+注意，这里支持泛域名证书，例如域名是test.example.com，可以使用example.com的泛域名证书；泛域名证书的文件名不带"\*."。例如*.example.com的泛域名证书文件名为：
+
+```
+example.com.key
+example.com.crt
+```
+设置之后，所有的子域名（例如a.example.com,b.example.com,www.example.com）等会自动使用该泛域名证书。
+
+## proxy容器自定义nginx配置
+nginx-proxy的镜像会自动生成基本的配置；在一些项目中会有一些特殊的需求，这样可以通过自定义配置实现，参考官方文档：
+[per-VIRTUAL_HOST](https://github.com/nginx-proxy/nginx-proxy#per-virtual_host)

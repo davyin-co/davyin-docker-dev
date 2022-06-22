@@ -1,0 +1,28 @@
+version: "3"
+services:
+  proxy:
+    image: "davyinsa/nginx-proxy"
+    container_name: proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      #- ./vhost.d:/etc/nginx/vhost.d
+      - ./certs:/etc/nginx/certs
+    ports:
+      - "443:443"
+      - "80:80"
+    environment:
+      #- HTTPS_METHOD=nohttps
+      - HSTS=off
+      #- SSL_POLICY=Mozilla-Modern
+      #- SSL_POLICY=Mozilla-Intermediate
+    networks:
+      - frontend
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "500m"
+        max-file: "10"
+networks:
+  default:
+    name: proxy
