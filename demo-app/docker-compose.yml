@@ -1,7 +1,7 @@
 version: "3"
 services:
   project_name:
-    image: sparkpos/docker-nginx-php:7.4-alpine
+    image: sparkpos/docker-nginx-php:8.1-alpine
     container_name: project_name
     hostname: project_name.docker.localhost
     healthcheck:
