@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mysql8:
+    image: mysql/mysql-server:8.0
+    container_name: mysql8
+    #ports:
+    #  - "3308:3306"
+    volumes:
+      ## for MacOS
+      #- ./mysql8-data:/var/lib/mysql:delegated
+      - ./mysql8-data:/var/lib/mysql
+    #user: mysql
+    restart: always
+    #privileged: true
+    command: --socket=/tmp/mysql.sock --max_allowed_packet=32505856  --authentication-policy=mysql_native_password
+    #command: --socket=/tmp/mysql.sock 
+    environment:
+      TZ: 'Asia/Shanghai'
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_ROOT_HOST: "%"
+networks:
+  default:
+    name: proxy

@@ -89,3 +89,11 @@ example.com.crt
 ## proxy容器自定义nginx配置
 nginx-proxy的镜像会自动生成基本的配置；在一些项目中会有一些特殊的需求，这样可以通过自定义配置实现，参考官方文档：
 [per-VIRTUAL_HOST](https://github.com/nginx-proxy/nginx-proxy#per-virtual_host)
+
+## 备注
+
+### 为什么mysql8使用 --authentication-policy=mysql_native_password？
+> mysql8.0.4开始，默认的密码验证插件为caching_sha2_password，而这种验证方式mariadb是不支持的。
+> 一些基于alpine的镜像，默认安装的mysql-client是mariadb提供的；以及站群镜像中为了规避一些潜在问题，也是使用mariadb提供的client。
+> mariadb client和mysql client都支持mysql_native_password
+> 基于以上的理由，mysql8使用的默认密码插件为mysql_native_password
