@@ -93,6 +93,7 @@ nginx-proxy的镜像会自动生成基本的配置；在一些项目中会有一
 ## 备注
 
 ### 为什么mysql8使用 --authentication-policy=mysql_native_password？
+[Authentication Plugin - SHA-256](https://mariadb.com/kb/en/authentication-plugin-sha-256/)
 > mysql8.0.4开始，默认的密码验证插件为caching_sha2_password，而这种验证方式mariadb是不支持的。
 > 一些基于alpine的镜像，默认安装的mysql-client是mariadb提供的；以及站群镜像中为了规避一些潜在问题，也是使用mariadb提供的client。
 > mariadb client和mysql client都支持mysql_native_password
