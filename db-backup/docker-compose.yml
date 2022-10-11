@@ -14,11 +14,12 @@ services:
       - DB_DUMP_TARGET=/backup
       - DB_HOST=mariadb
       - DB_NAME=ALL
+      - DB_NAME_EXCLUDE=mysql
       - DB_USER=root
       - DB_PASS=password
       - DB_DUMP_FREQ=1440
       - DB_DUMP_BEGIN=1640
-      - DB_CLEANUP_TIME=8640
+      - DB_CLEANUP_TIME=20160
       - ENABLE_CHECKSUM=FALSE
       - COMPRESSION=GZ
       - SPLIT_DB=TRUE
