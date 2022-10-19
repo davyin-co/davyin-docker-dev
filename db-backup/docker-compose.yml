@@ -23,9 +23,6 @@ services:
       - ENABLE_CHECKSUM=FALSE
       - COMPRESSION=GZ
       - SPLIT_DB=TRUE
-      - ENABLE_SMTP=FALSE
-      - ENABLE_ZABBIX=FALSE
-      - ENABLE_LOGROTATE=FALSE
 
 networks:
   default:
