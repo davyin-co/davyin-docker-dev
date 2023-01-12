@@ -13,7 +13,7 @@
     该方案即可做为本地开发环境，也可以作为线上部署使用。
 
 4. 安全性
-    选用的容器镜像经过响应的安全改进。
+    选用的容器镜像经过相应的安全改进。
 
 # 组件功能及介绍
 |组件|文件|说明|FQDN|
@@ -39,7 +39,7 @@ sh network.sh
 docker network create --driver=bridge --subnet=10.10.255.0/24 --ip-range=10.10.255.0/24 --gateway=10.10.255.254 proxy
 ```
 
-2. 启动容器公用容器（docker启动时候自动启动）
+2. 启动公用容器（docker启动时候自动启动）
 ```shell
 ## 执行脚本
 sh proxy.sh
@@ -67,7 +67,7 @@ cd demo-project
 5. 浏览器访问
 ```shell
 ## 一般是如下格式的IP
-xx.docker.localhost   
+xx.docker.localhost
 ## e.g.  dyniva.docker.localhost
 ```
 
