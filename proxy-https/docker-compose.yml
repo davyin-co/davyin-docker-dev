@@ -13,7 +13,9 @@ services:
     environment:
       #- HTTPS_METHOD=nohttps
       - HSTS=off
+      ## TLS 1.3 only.
       #- SSL_POLICY=Mozilla-Modern
+      ## TLS 1.2/1.3 only.
       #- SSL_POLICY=Mozilla-Intermediate
     networks:
       - frontend
