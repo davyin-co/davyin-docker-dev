@@ -12,6 +12,7 @@ services:
       start_period: 10s
     volumes:
       - ./:/var/www/html
+      - ./logs:/www/logs
     environment:
       - VIRTUAL_HOST=project_name.docker.localhost
       - DRUPAL_WEB_ROOT=docroot
