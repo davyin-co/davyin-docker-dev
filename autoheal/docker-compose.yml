@@ -3,6 +3,7 @@ services:
   autoheal:
     image:  willfarrell/autoheal
     container_name: autoheal
+    restart: always
     environment:
       - AUTOHEAL_CONTAINER_LABEL=all
     volumes:
