@@ -1,7 +1,7 @@
 version: "3"
 services:
   mysql8:
-    image: mysql/mysql-server:8.0
+    image: mysql:8.4
     container_name: mysql8
     #ports:
     #  - "3308:3306"
@@ -9,13 +9,11 @@ services:
       ## for MacOS
       #- ./mysql8-data:/var/lib/mysql:delegated
       - ./mysql8-data:/var/lib/mysql
-    #user: mysql
+      ## 如果自定义配置
+      # - ./config/custom.cnf:/etc/mysql/conf.d/custom.cnf
     restart: always
-    #privileged: true
-    command: --socket=/tmp/mysql.sock --max_allowed_packet=32505856  --authentication-policy=mysql_native_password
-    #command: --socket=/tmp/mysql.sock 
+    # command: --socket=/tmp/mysql.sock --max_allowed_packet=32505856  --authentication-policy=mysql_native_password
     environment:
-      TZ: 'Asia/Shanghai'
       MYSQL_ROOT_PASSWORD: "password"
       MYSQL_ROOT_HOST: "%"
 networks:
