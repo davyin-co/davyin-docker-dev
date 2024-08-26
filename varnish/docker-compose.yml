@@ -1,0 +1,16 @@
+services:
+  varnish:
+    image: wodby/varnish:6
+    container_name: varnish
+    environment:
+    - VARNISH_CONFIG_PRESET=drupal
+    - VARNISHD_MEMORY_SIZE=1024M
+    - VARNISH_BACKEND_HOST=dsf
+    - VARNISH_BACKEND_PORT=80
+    - VARNISH_PURGE_KEY=varnish
+    ports:
+    - 8080:6081
+networks:
+  default:
+    name: proxy
+    external: true
