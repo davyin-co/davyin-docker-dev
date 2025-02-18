@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx-proxy:
-    image: "davyinsa/nginx-proxy"
+    image: "registry.cn-hangzhou.aliyuncs.com/davyin/nginx-proxy"
     container_name: proxy
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
