@@ -1,7 +1,7 @@
 version: "3"
 services:
   project_name:
-    image: davyinsa/docker-nginx-php:8.1-alpine
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/nginx-php:8.3-alpine
     container_name: project_name
     hostname: project_name.docker.localhost
     healthcheck:
