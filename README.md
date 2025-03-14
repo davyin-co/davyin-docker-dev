@@ -98,3 +98,6 @@ nginx-proxy的镜像会自动生成基本的配置；在一些项目中会有一
 > 一些基于alpine的镜像，默认安装的mysql-client是mariadb提供的；以及站群镜像中为了规避一些潜在问题，也是使用mariadb提供的client。
 > mariadb client和mysql client都支持mysql_native_password
 > 基于以上的理由，mysql8使用的默认密码插件为mysql_native_password
+>
+## 附录
+* [Ubuntu 22.04安装Docker(最全教程，无需科学上网)](https://blog.csdn.net/weixin_44355653/article/details/140267707)
