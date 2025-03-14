@@ -2,11 +2,14 @@ version: "3"
 services:
   db-backup:
     container_name: db-backup
-    image: tiredofit/db-backup
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/mysql-backup-rotate:3-3.12.2
     volumes:
       - ./backup:/backup
     restart: always
     environment:
+      - ROTATE_OPTIONS=--daily=10 --weekly=4 --monthly=6 --prefer-recent
+      - DB_DUMP_FREQ=1440
+      - DB_DUMP_BEGIN=0140
       - CONTAINER_ENABLE_MONITORING=FALSE
       - TIMEZONE=Asia/Shanghai
       - BACKUP_LOCATION=FILESYSTEM
@@ -17,8 +20,6 @@ services:
       - DB_NAME_EXCLUDE=mysql
       - DB_USER=root
       - DB_PASS=password
-      - DB_DUMP_FREQ=1440
-      - DB_DUMP_BEGIN=1640
       - DB_CLEANUP_TIME=20160
       - ENABLE_CHECKSUM=FALSE
       - COMPRESSION=GZ
