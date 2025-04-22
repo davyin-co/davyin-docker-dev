@@ -1,4 +1,3 @@
-version: "3"
 services:
   db-backup:
     container_name: db-backup

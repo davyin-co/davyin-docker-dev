@@ -1,4 +1,3 @@
-version: "3"
 services:
   es01:
     image: davyinsa/elasticsearch-ik:7.16.2

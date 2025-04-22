@@ -1,4 +1,3 @@
-version: "3"
 services:
   redirect-to-www:
     image: schmunk42/nginx-redirect
