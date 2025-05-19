@@ -13,7 +13,7 @@ services:
       - TIMEZONE=Asia/Shanghai
       - BACKUP_LOCATION=FILESYSTEM
       - DB_TYPE=mysql
-      - DB_DUMP_TARGET=/backup
+      - DEFAULT_FILESYSTEM_PATH=/backup
       - DB_HOST=mariadb
       - DB_NAME=ALL
       - DB_NAME_EXCLUDE=mysql
