@@ -1,7 +1,7 @@
 services:
   db-backup:
     container_name: db-backup
-    image: registry.cn-hangzhou.aliyuncs.com/davyin/mysql-backup-rotate:3-3.12.2
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/mysql-backup-rotate:4.1.17
     volumes:
       - ./backup:/backup
     restart: always
@@ -12,8 +12,8 @@ services:
       - CONTAINER_ENABLE_MONITORING=FALSE
       - TIMEZONE=Asia/Shanghai
       - BACKUP_LOCATION=FILESYSTEM
-      - DB_TYPE=mysql
       - DEFAULT_FILESYSTEM_PATH=/backup
+      - DB_TYPE=mysql
       - DB_HOST=mariadb
       - DB_NAME=ALL
       - DB_NAME_EXCLUDE=mysql
