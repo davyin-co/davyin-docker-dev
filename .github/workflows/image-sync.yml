@@ -34,5 +34,20 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Aliyun Image
       run: |
         #!/usr/bin/env bash
+        ## wodby/mariadb
         skopeo copy docker://wodby/mariadb:11.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/wodby-mariadb:11.4
+        
+        ## wodby/varnish
+        skopeo copy docker://wodby/varnish:6 docker://registry.cn-hangzhou.aliyuncs.com/davyin/wodby-varnish:6
+        
+        ## bitnami/redis
+        skopeo copy docker://bitnami/redis:6.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:6.2
+        skopeo copy docker://bitnami/redis:7.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:7.4
+        skopeo copy docker://bitnami/redis:8.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:8.2
+
+        ## mysql
+        skopeo copy docker://library/mysql:8.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/mysql:8.4
+        
+        ## autoheal
+        skopeo copy docker://willfarrell/autoheal docker://registry.cn-hangzhou.aliyuncs.com/davyin/autoheal
  
