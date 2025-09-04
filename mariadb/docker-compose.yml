@@ -1,6 +1,6 @@
 services:
   mariadb:
-    image: wodby/mariadb:11.4
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/wodby-mariadb:11.4
     container_name: mariadb
     volumes:
       - ./mariadb-data:/var/lib/mysql:cached

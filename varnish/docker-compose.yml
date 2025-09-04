@@ -1,6 +1,6 @@
 services:
   varnish:
-    image: wodby/varnish:6
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/wodby-varnish:6
     container_name: varnish
     environment:
     - VARNISH_CONFIG_PRESET=drupal

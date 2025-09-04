@@ -1,6 +1,6 @@
 services:
   autoheal:
-    image:  willfarrell/autoheal
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/autoheal
     container_name: autoheal
     restart: always
     environment:

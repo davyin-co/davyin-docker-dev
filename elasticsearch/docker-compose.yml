@@ -1,6 +1,6 @@
 services:
   es01:
-    image: davyinsa/elasticsearch-ik:7.16.2
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/elasticsearch-ik:7.16.2
     container_name: es01
     environment:
       - discovery.type=single-node

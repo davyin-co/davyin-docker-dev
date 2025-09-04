@@ -1,6 +1,6 @@
 services:
   redis:
-    image: 'bitnami/redis:6.2'
+    image: 'registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:8.2'
     restart: always
     ports:
       - '6379:6379'
