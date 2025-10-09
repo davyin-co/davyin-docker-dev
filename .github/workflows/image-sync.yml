@@ -41,9 +41,9 @@ jobs:
         skopeo copy docker://wodby/varnish:6 docker://registry.cn-hangzhou.aliyuncs.com/davyin/wodby-varnish:6
         
         ## bitnami/redis
-        skopeo copy docker://bitnami/redis:6.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:6.2
-        skopeo copy docker://bitnami/redis:7.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:7.4
-        skopeo copy docker://bitnami/redis:8.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:8.2
+        skopeo copy docker://bitnamilegacy/redis:6.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:6.2
+        skopeo copy docker://bitnamilegacy/redis:7.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:7.4
+        skopeo copy docker://bitnamilegacy/redis:8.2 docker://registry.cn-hangzhou.aliyuncs.com/davyin/bitnami-redis:8.2
 
         ## mysql
         skopeo copy docker://library/mysql:8.4 docker://registry.cn-hangzhou.aliyuncs.com/davyin/mysql:8.4
