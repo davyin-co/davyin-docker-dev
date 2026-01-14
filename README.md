@@ -45,7 +45,7 @@ docker network create --driver=bridge --subnet=10.10.255.0/24 --ip-range=10.10.2
 sh proxy.sh
 
 ## 也可以手动执行相关的命令
-docker-compose -f proxy/docker-compose.yml -f mariadb/docker-compose.yml -f pma/docker-compose.yml up -d
+docker compose -f proxy/docker-compose.yml -f mariadb/docker-compose.yml -f pma/docker-compose.yml up -d
 ```
 
 3. 项目配置（drupal)
