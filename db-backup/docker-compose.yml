@@ -16,7 +16,7 @@ services:
       - DB_TYPE=mysql
       - DB_HOST=mariadb
       - DB_NAME=ALL
-      - DB_NAME_EXCLUDE=mysql
+      - DB_NAME_EXCLUDE=mysql,__recycle_bin__,sys
       - DB_USER=root
       - DB_PASS=password
       - DB_CLEANUP_TIME=20160
