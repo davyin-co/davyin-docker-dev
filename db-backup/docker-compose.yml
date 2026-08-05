@@ -1,7 +1,7 @@
 services:
   db-backup:
     container_name: db-backup
-    image: registry.cn-hangzhou.aliyuncs.com/davyin/mysql-backup-rotate:4.1.17
+    image: registry.cn-hangzhou.aliyuncs.com/davyin/mysql-backup-rotate:4.1.100
     volumes:
       - ./backup:/backup
     restart: always
